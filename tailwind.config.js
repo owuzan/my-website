@@ -8,6 +8,12 @@ module.exports = {
   theme: {
     ...theme,
     colors,
+    fontFamily: {
+      sans: ["Inter", "system-ui"],
+      serif: ["Inter", "Georgia"],
+      display: ["Inter"],
+      body: ["Inter"],
+    },
     extend: {},
   },
   variants: {
