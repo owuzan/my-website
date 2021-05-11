@@ -1,8 +1,27 @@
 import React from "react";
+import classNames from "classnames";
 
-export default function Button({ children, Icon = null }) {
+const Button = React.forwardRef((props, ref) => {
+  const {
+    as = "button",
+    children,
+    color = "white",
+    icon = null,
+    ...rest
+  } = props;
+
+  const Icon = icon;
+  const As = as;
+
+  const buttonClasses = classNames(
+    {
+      ["bg-white border-gray-200 text-gray-900"]: color == "white",
+      ["bg-blue-500 border-blue-600 text-white"]: color == "blue",
+    },
+    "border rounded-lg text-base font-semibold inline-flex py-3 px-4 shadow space-x-2 items-center"
+  );
   return (
-    <button className="bg-white border border-gray-200 rounded-lg text-base font-semibold text-gray-900 inline-flex py-3 px-4 shadow space-x-2 items-center">
+    <As ref={ref} className={buttonClasses} {...rest}>
       {Icon ? (
         <>
           <Icon className="text-2xl" />
@@ -11,6 +30,8 @@ export default function Button({ children, Icon = null }) {
       ) : (
         children
       )}
-    </button>
+    </As>
   );
-}
+});
+
+export default Button;

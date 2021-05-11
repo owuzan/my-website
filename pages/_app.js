@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <div className="min-h-screen flex flex-col space-y-12 bg-gray-50">
+      <div className="min-h-screen flex flex-col space-y-12 bg-gray-50 dark:bg-black transition">
         <Header />
         <div className="flex-auto">
           <Component {...pageProps} />
