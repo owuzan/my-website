@@ -1,6 +1,7 @@
 import Card from "../components/Card";
 import Badge from "../components/Badge";
 import Button from "../components/Button";
+import Link from "next/link";
 
 export default function Home() {
   return (

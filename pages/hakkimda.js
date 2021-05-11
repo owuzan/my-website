@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Hakkimda() {
   return (
     <div className="container max-w-5xl px-4 mx-auto space-y-6">
       <h1 className="text-6xl font-black text-gray-900 text-center">
