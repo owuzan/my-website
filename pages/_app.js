@@ -2,10 +2,16 @@ import "tailwindcss/tailwind.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Head from "next/head";
+import { Auth0Provider } from "@auth0/auth0-react";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <Auth0Provider
+      domain="oguzhandev.us.auth0.com"
+      clientId="6i1hsMoc9eY2jf14bmepWCrFapqujBCM"
+      redirectUri={process.env.NEXT_PUBLIC_ORIGIN}
+    >
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -20,7 +26,7 @@ function MyApp({ Component, pageProps }) {
         </div>
         <Footer />
       </div>
-    </>
+    </Auth0Provider>
   );
 }
 
