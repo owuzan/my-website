@@ -11,7 +11,7 @@ const Button = React.forwardRef((props, ref) => {
   } = props;
 
   const Icon = icon;
-  const As = as;
+  const Element = as;
 
   const buttonClasses = classNames(
     {
@@ -21,7 +21,7 @@ const Button = React.forwardRef((props, ref) => {
     "border rounded-lg text-base font-semibold inline-flex py-3 px-4 shadow space-x-2 items-center"
   );
   return (
-    <As ref={ref} className={buttonClasses} {...rest}>
+    <Element ref={ref} className={buttonClasses} {...rest}>
       {Icon ? (
         <>
           <Icon className="text-2xl" />
@@ -30,7 +30,7 @@ const Button = React.forwardRef((props, ref) => {
       ) : (
         children
       )}
-    </As>
+    </Element>
   );
 });
 
